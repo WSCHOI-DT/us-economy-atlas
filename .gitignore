@@ -1,0 +1,23 @@
+# Secrets & local environment
+.env
+*.env
+.env.*
+us-economy.env
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+pipeline/.cache/
+pipeline/raw/
+
+# Node / Frontend
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db

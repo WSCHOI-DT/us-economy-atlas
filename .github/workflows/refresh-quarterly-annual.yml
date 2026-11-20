@@ -1,0 +1,57 @@
+name: Refresh Data — Quarterly & Annual (BEA, Census, FHFA, FDIC, SBA, IRS, USDA)
+
+on:
+  schedule:
+    - cron: "0 22 15 1,4,7,10 *" # 15th of Jan/Apr/Jul/Oct 22:00 UTC
+  workflow_dispatch:
+    inputs:
+      include_annual:
+        description: "Also refresh annual datasets (BEA, Census, IRS, USDA)"
+        required: false
+        default: "true"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    env:
+      FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+      BEA_API_KEY: ${{ secrets.BEA_API_KEY }}
+      CENSUS_API_KEY: ${{ secrets.CENSUS_API_KEY }}
+      USDA_NASS_API_KEY: ${{ secrets.USDA_NASS_API_KEY }}
+      DATA_GOV_API_KEY: ${{ secrets.DATA_GOV_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Run Quarterly (and Semi-Annual) ETL Tier
+        run: |
+          python pipeline/fetch.py --tier quarterly
+          MONTH=$(date -u +%m)
+          if [ "$MONTH" = "04" ] || [ "$MONTH" = "10" ] || [ "${{ github.event.inputs.include_annual }}" = "true" ]; then
+            python pipeline/fetch.py --tier annual
+          fi
+      - name: Validate Schema & Secret Hygiene
+        run: python -m unittest pipeline/tests/test_pipeline_schema.py
+      - name: Commit Updated Snapshots
+        run: |
+          git config user.name "us-economy-atlas-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add frontend/public/data pipeline/state/raw_snapshots.tar.gz
+          if ! git diff --cached --quiet; then
+            git commit -m "data(quarterly): refresh quarterly/annual structural indicators"
+            git push
+          fi
+
+  deploy:
+    needs: refresh
+    uses: ./.github/workflows/deploy.yml
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
