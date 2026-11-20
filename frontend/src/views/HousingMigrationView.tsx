@@ -43,7 +43,7 @@ export const HousingMigrationView: React.FC<HousingMigrationViewProps> = ({
           return `<b>${d.name}</b><br/>매물 체류기간(DOM): <b>${d.value[0]}일</b><br/>ZHVI YoY: <b>${d.value[1]}%</b><br/>ZHVI: ${fmtUsd(d.zhvi)} · 가격인하율: ${fmtPct(d.pr, 1)}<br/>IRS 순 AGI: ${fmtCompactUsd(d.agi, "M")}`;
         },
       },
-      grid: { left: 54, right: 20, top: 24, bottom: 42 },
+      grid: { left: 54, right: 20, top: 38, bottom: 42 },
       xAxis: {
         name: "매물 체류기간 DOM (일, 짧을수록 매수세 강함)",
         nameLocation: "middle",
