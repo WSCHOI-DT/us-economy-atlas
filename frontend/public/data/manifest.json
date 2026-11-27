@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-26T22:12:14Z",
+  "generated_at": "2026-11-27T22:07:50Z",
   "total_sources": 23,
   "ok_sources": 22,
   "stale_sources": 0,
@@ -16,7 +16,7 @@
       "geo": "National",
       "key": "FRED_API_KEY",
       "status": "ok",
-      "fetched_at": "2026-11-26T22:11:56Z",
+      "fetched_at": "2026-11-27T22:07:48Z",
       "vintage": "2026-11-25",
       "record_count": 24,
       "error": null
@@ -114,8 +114,8 @@
       "geo": "National / State",
       "key": null,
       "status": "ok",
-      "fetched_at": "2026-11-20T22:07:52Z",
-      "vintage": "2026-08",
+      "fetched_at": "2026-11-27T22:07:49Z",
+      "vintage": "2026-09",
       "record_count": 51,
       "error": null
     },
