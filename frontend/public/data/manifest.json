@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T22:07:50Z",
+  "generated_at": "2026-11-27T22:11:57Z",
   "total_sources": 23,
   "ok_sources": 22,
   "stale_sources": 0,
@@ -16,8 +16,8 @@
       "geo": "National",
       "key": "FRED_API_KEY",
       "status": "ok",
-      "fetched_at": "2026-11-27T22:07:48Z",
-      "vintage": "2026-11-25",
+      "fetched_at": "2026-11-27T22:11:41Z",
+      "vintage": "2026-11-27",
       "record_count": 24,
       "error": null
     },
@@ -30,8 +30,8 @@
       "geo": "National",
       "key": null,
       "status": "ok",
-      "fetched_at": "2026-11-26T22:11:57Z",
-      "vintage": "2026-11-24",
+      "fetched_at": "2026-11-27T22:11:42Z",
+      "vintage": "2026-11-25",
       "record_count": 106,
       "error": null
     },
@@ -44,7 +44,7 @@
       "geo": "National / Sector",
       "key": null,
       "status": "ok",
-      "fetched_at": "2026-11-26T22:11:59Z",
+      "fetched_at": "2026-11-27T22:11:43Z",
       "vintage": "2026-11-25",
       "record_count": 30,
       "error": null
@@ -58,7 +58,7 @@
       "geo": "National / Policy",
       "key": null,
       "status": "ok",
-      "fetched_at": "2026-11-26T22:11:59Z",
+      "fetched_at": "2026-11-27T22:11:44Z",
       "vintage": "2026-09-24",
       "record_count": 24,
       "error": null
@@ -72,7 +72,7 @@
       "geo": "Corporate (10 Bellwethers)",
       "key": null,
       "status": "ok",
-      "fetched_at": "2026-11-26T22:12:12Z",
+      "fetched_at": "2026-11-27T22:11:55Z",
       "vintage": "2026-11-25",
       "record_count": 10,
       "error": null
@@ -86,9 +86,9 @@
       "geo": "State / ZIP",
       "key": null,
       "status": "ok",
-      "fetched_at": "2026-11-26T22:12:12Z",
-      "vintage": "2025-11-26..2026-11-26",
-      "record_count": 7371920,
+      "fetched_at": "2026-11-27T22:11:56Z",
+      "vintage": "2025-11-27..2026-11-27",
+      "record_count": 7375344,
       "error": null
     },
     {
@@ -100,7 +100,7 @@
       "geo": "State / County",
       "key": null,
       "status": "ok",
-      "fetched_at": "2026-11-26T22:12:13Z",
+      "fetched_at": "2026-11-27T22:11:57Z",
       "vintage": "2026-11-24",
       "record_count": 360,
       "error": null
